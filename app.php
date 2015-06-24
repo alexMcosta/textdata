@@ -33,12 +33,12 @@
     $user_string = $_GET["letter_counter"];
 
     //Turn user string into an array of lowercase letters
-    $split = str_split(strtolower($user_string););
+    $user_array = str_split(strtolower($user_string));
 
     //Check each letter of the user array to add to letter count
-    foreach ($split as $letter) {
+    foreach ($user_array as $user_letter) {
 
-        switch ($letter) {
+        switch ($user_letter) {
             case 'a':
                 $letter["a"] = $letter["a"] + 1;
                 break;
@@ -122,3 +122,13 @@
 
 
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <div id="container">
+    <p><?php echo $letter["a"]; ?></p>
+  </div>
+</body>
+</html>
