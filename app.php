@@ -128,7 +128,84 @@
 </head>
 <body>
   <div id="container">
-    <p><?php echo $letter["a"]; ?></p>
+    <div class="letter" id="a">
+
+    </div>
+    <div class="letter" id="b">
+
+    </div>
+    <div class="letter" id="c">
+
+    </div>
+    <div class="letter" id="d">
+
+    </div>
+    <div class="letter" id="e">
+
+    </div>
+    <div class="letter" id="f">
+
+    </div>
+    <div class="letter" id="g">
+
+    </div>
+    <div class="letter" id="h">
+
+    </div>
+    <div class="letter" id="i">
+
+    </div>
+    <div class="letter" id="j">
+
+    </div>
+    <div class="letter" id="k">
+
+    </div>
+    <div class="letter" id="l">
+
+    </div>
+    <div class="letter" id="m">
+
+    </div>
+    <div class="letter" id="n">
+
+    </div>
+    <div class="letter" id="o">
+
+    </div>
+    <div class="letter" id="p">
+
+    </div>
+    <div class="letter" id="q">
+
+    </div>
+    <div class="letter" id="r">
+
+    </div>
+    <div class="letter" id="s">
+
+    </div>
+    <div class="letter" id="t">
+
+    </div>
+    <div class="letter" id="u">
+
+    </div>
+    <div class="letter" id="v">
+
+    </div>
+    <div class="letter" id="w">
+
+    </div>
+    <div class="letter" id="x">
+
+    </div>
+    <div class="letter" id="y">
+
+    </div>
+    <div class="letter" id="z">
+
+    </div>
   </div>
 </body>
 </html>
