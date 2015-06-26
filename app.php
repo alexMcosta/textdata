@@ -30,7 +30,7 @@
       );
 
     //Get user string
-    $user_string = $_GET["letter_counter"];
+    $user_string = $_POST["letter_counter"];
 
     //Turn user string into an array of lowercase letters
     $user_array = str_split(strtolower($user_string));
@@ -129,86 +129,86 @@
 </head>
 <body>
   <div id="container">
-    <div id="flex-container">
-      <div class="letter" id="a">
+    <ul class="flex-container">
+      <li class="letter" id="a">
         <p>A: <?php echo $letter["a"];?></p>
-      </div>
-      <div class="letter" id="b">
+      </li>
+      <li class="letter" id="b">
         <p>B: <?php echo $letter["b"];?></p>
-      </div>
-      <div class="letter" id="c">
+      </li>
+      <li class="letter" id="c">
         <p>C: <?php echo $letter["c"];?></p>
-      </div>
-      <div class="letter" id="d">
+      </li>
+      <li class="letter" id="d">
         <p>D: <?php echo $letter["d"];?></p>
-      </div>
-      <div class="letter" id="e">
+      </li>
+      <li class="letter" id="e">
         <p>E: <?php echo $letter["e"];?></p>
-      </div>
-      <div class="letter" id="f">
+      </li>
+      <li class="letter" id="f">
         <p>F: <?php echo $letter["f"];?></p>
-      </div>
-      <div class="letter" id="g">
+      </li>
+      <li class="letter" id="g">
         <p>G: <?php echo $letter["g"];?></p>
-      </div>
-      <div class="letter" id="h">
+      </li>
+      <li class="letter" id="h">
         <p>H: <?php echo $letter["h"];?></p>
-      </div>
-      <div class="letter" id="i">
+      </li>
+      <li class="letter" id="i">
         <p>I: <?php echo $letter["i"];?></p>
-      </div>
-      <div class="letter" id="j">
+      </li>
+      <li class="letter" id="j">
         <p>J: <?php echo $letter["j"];?></p>
-      </div>
-      <div class="letter" id="k">
+      </li>
+      <li class="letter" id="k">
         <p>K: <?php echo $letter["k"];?></p>
-      </div>
-      <div class="letter" id="l">
+      </li>
+      <li class="letter" id="l">
         <p>L: <?php echo $letter["l"];?></p>
-      </div>
-      <div class="letter" id="m">
+      </li>
+      <li class="letter" id="m">
         <p>M: <?php echo $letter["m"];?></p>
-      </div>
-      <div class="letter" id="n">
+      </li>
+      <li class="letter" id="n">
         <p>N: <?php echo $letter["n"];?></p>
-      </div>
-      <div class="letter" id="o">
+      </li>
+      <li class="letter" id="o">
         <p>O: <?php echo $letter["o"];?></p>
-      </div>
-      <div class="letter" id="p">
+      </li>
+      <li class="letter" id="p">
         <p>P: <?php echo $letter["p"];?></p>
-      </div>
-      <div class="letter" id="q">
+      </li>
+      <li class="letter" id="q">
         <p>Q: <?php echo $letter["q"];?></p>
-      </div>
-      <div class="letter" id="r">
+      </li>
+      <li class="letter" id="r">
         <p>R: <?php echo $letter["r"];?></p>
-      </div>
-      <div class="letter" id="s">
+      </li>
+      <li class="letter" id="s">
         <p>S: <?php echo $letter["s"];?></p>
-      </div>
-      <div class="letter" id="t">
+      </li>
+      <li class="letter" id="t">
         <p>T: <?php echo $letter["t"];?></p>
-      </div>
-      <div class="letter" id="u">
+      </li>
+      <li class="letter" id="u">
         <p>U: <?php echo $letter["u"];?></p>
-      </div>
-      <div class="letter" id="v">
+      </li>
+      <li class="letter" id="v">
         <p>V: <?php echo $letter["v"];?></p>
-      </div>
-      <div class="letter" id="w">
+      </li>
+      <li class="letter" id="w">
         <p>W: <?php echo $letter["w"];?></p>
-      </div>
-      <div class="letter" id="x">
+      </li>
+      <li class="letter" id="x">
         <p>X: <?php echo $letter["x"];?></p>
-      </div>
-      <div class="letter" id="y">
+      </li>
+      <li class="letter" id="y">
         <p>Y: <?php echo $letter["y"];?></p>
-      </div>
-      <div class="letter" id="z">
+      </li>
+      <li class="letter" id="z">
         <p>Z: <?php echo $letter["z"];?></p>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </body>
 </html>
