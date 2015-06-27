@@ -29,8 +29,13 @@
         "z" => 0,
       );
 
+
+
     //Get user string
     $user_string = $_POST["letter_counter"];
+
+    //Get total charicter count
+    $charicter_total = strlen($user_string);
 
     //Turn user string into an array of lowercase letters
     $user_array = str_split(strtolower($user_string));
@@ -119,6 +124,7 @@
                 break;
         }
     }
+    
 
 
 ?>
@@ -129,6 +135,7 @@
 </head>
 <body>
   <div id="container">
+    <p>The total number of charicters is <?php echo $charicter_total;?></p>
     <ul class="flex-container">
       <li class="letter" id="a">
         <p>A: <?php echo $letter["a"];?></p>
@@ -141,6 +148,7 @@
       </li>
       <li class="letter" id="d">
         <p>D: <?php echo $letter["d"];?></p>
+        <p>%<?php ?></p>
       </li>
       <li class="letter" id="e">
         <p>E: <?php echo $letter["e"];?></p>
