@@ -127,15 +127,17 @@
       return round($send_back, 2);
     }
 
-    //Sort Highest to lowest
+    //Sort letters Highest to lowest
     arsort($letters);
 
     //letter count.
     $total_letters = array_sum($letters);
 
-    //count, sort most common words
+    //count, and ignore punctuation of words
     $words = array_count_values(preg_split("/[\s,.\?;:]+/",strtolower($user_string), Null, PREG_SPLIT_NO_EMPTY));
 
+    //Sort words from highest to lowest
+    arsort($words);
 
     //word count
     $total_words = array_sum($words);

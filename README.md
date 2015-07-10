@@ -5,10 +5,8 @@ and output data about the text.
 
 ------------PHP Needs--------
 
-1) Organize words by most common
+None known as of now.
 
 ------------Style Needs------
 
 -Plan on look I am aiming for then enter it here.
-
-
