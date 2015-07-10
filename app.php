@@ -29,13 +29,8 @@
         "z" => 0,
       );
 
-
-
     //Get user string
     $user_string = $_POST["letter_counter"];
-
-    //Get total charicter count
-    $charicter_total = strlen($user_string);
 
     //Turn user string into an array of lowercase letters
     $user_array = str_split(strtolower($user_string));
@@ -45,178 +40,163 @@
 
         switch ($user_letter) {
             case 'a':
-                $letter["a"] = $letter["a"] + 1;
+                $letters["a"] = $letters["a"] + 1;
                 break;
             case 'b':
-                $letter["b"] = $letter["b"] + 1;
+                $letters["b"] = $letters["b"] + 1;
                 break;
             case 'c':
-                $letter["c"] = $letter["c"] + 1;
+                $letters["c"] = $letters["c"] + 1;
                 break;
             case 'd':
-                $letter["d"] = $letter["d"] + 1;
+                $letters["d"] = $letters["d"] + 1;
                 break;
             case 'e':
-                $letter["e"] = $letter["e"] + 1;
+                $letters["e"] = $letters["e"] + 1;
                 break;
             case 'f':
-                $letter["f"] = $letter["f"] + 1;
+                $letters["f"] = $letters["f"] + 1;
                 break;
             case 'g':
-                $letter["g"] = $letter["g"] + 1;
+                $letters["g"] = $letters["g"] + 1;
                 break;
             case 'h':
-                $letter["h"] = $letter["h"] + 1;
+                $letters["h"] = $letters["h"] + 1;
                 break;
             case 'i':
-                $letter["i"] = $letter["i"] + 1;
+                $letters["i"] = $letters["i"] + 1;
                 break;
             case 'j':
-                $letter["j"] = $letter["j"] + 1;
+                $letters["j"] = $letters["j"] + 1;
                 break;
             case 'k':
-                $letter["k"] = $letter["k"] + 1;
+                $letters["k"] = $letters["k"] + 1;
                 break;
             case 'l':
-                $letter["l"] = $letter["l"] + 1;
+                $letters["l"] = $letters["l"] + 1;
                 break;
             case 'm':
-                $letter["m"] = $letter["m"] + 1;
+                $letters["m"] = $letters["m"] + 1;
                 break;
             case 'n':
-                $letter["n"] = $letter["n"] + 1;
+                $letters["n"] = $letters["n"] + 1;
                 break;
             case 'o':
-                $letter["o"] = $letter["o"] + 1;
+                $letters["o"] = $letters["o"] + 1;
                 break;
             case 'p':
-                $letter["p"] = $letter["p"] + 1;
+                $letters["p"] = $letters["p"] + 1;
                 break;
             case 'q':
-                $letter["q"] = $letter["q"] + 1;
+                $letters["q"] = $letters["q"] + 1;
                 break;
             case 'r':
-                $letter["r"] = $letter["r"] + 1;
+                $letters["r"] = $letters["r"] + 1;
                 break;
             case 's':
-                $letter["s"] = $letter["s"] + 1;
+                $letters["s"] = $letters["s"] + 1;
                 break;
             case 't':
-                $letter["t"] = $letter["t"] + 1;
+                $letters["t"] = $letters["t"] + 1;
                 break;
             case 'u':
-                $letter["u"] = $letter["u"] + 1;
+                $letters["u"] = $letters["u"] + 1;
                 break;
             case 'v':
-                $letter["v"] = $letter["v"] + 1;
+                $letters["v"] = $letters["v"] + 1;
                 break;
             case 'w':
-                $letter["w"] = $letter["w"] + 1;
+                $letters["w"] = $letters["w"] + 1;
                 break;
             case 'x':
-                $letter["x"] = $letter["x"] + 1;
+                $letters["x"] = $letters["x"] + 1;
                 break;
             case 'y':
-                $letter["y"] = $letter["y"] + 1;
+                $letters["y"] = $letters["y"] + 1;
                 break;
             case 'z':
-                $letter["z"] = $letter["z"] + 1;
+                $letters["z"] = $letters["z"] + 1;
                 break;
         }
     }
-    
+    //Make percentage calculator
+    function percentage($letter, $devide_by){
+      $a = $letter / $devide_by;
+      $send_back = $a * 100;
+
+      return round($send_back, 2);
+    }
+
+    //Sort Highest to lowest
+    arsort($letters);
+
+    //letter count.
+    $total_letters = array_sum($letters);
+
+    //count, sort most common words
+    $words = array_count_values(preg_split("/[\s,.\?;:]+/",strtolower($user_string), Null, PREG_SPLIT_NO_EMPTY));
+
+
+    //word count
+    $total_words = array_sum($words);
 
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="styles.css" rel="stylesheet" type="text/css">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!--<link rel="stylesheet" href="styles.css">-->
 </head>
 <body>
   <div id="container">
-    <p>The total number of charicters is <?php echo $charicter_total;?></p>
-    <ul class="flex-container">
-      <li class="letter" id="a">
-        <p>A: <?php echo $letter["a"];?></p>
-      </li>
-      <li class="letter" id="b">
-        <p>B: <?php echo $letter["b"];?></p>
-      </li>
-      <li class="letter" id="c">
-        <p>C: <?php echo $letter["c"];?></p>
-      </li>
-      <li class="letter" id="d">
-        <p>D: <?php echo $letter["d"];?></p>
-        <p>%<?php ?></p>
-      </li>
-      <li class="letter" id="e">
-        <p>E: <?php echo $letter["e"];?></p>
-      </li>
-      <li class="letter" id="f">
-        <p>F: <?php echo $letter["f"];?></p>
-      </li>
-      <li class="letter" id="g">
-        <p>G: <?php echo $letter["g"];?></p>
-      </li>
-      <li class="letter" id="h">
-        <p>H: <?php echo $letter["h"];?></p>
-      </li>
-      <li class="letter" id="i">
-        <p>I: <?php echo $letter["i"];?></p>
-      </li>
-      <li class="letter" id="j">
-        <p>J: <?php echo $letter["j"];?></p>
-      </li>
-      <li class="letter" id="k">
-        <p>K: <?php echo $letter["k"];?></p>
-      </li>
-      <li class="letter" id="l">
-        <p>L: <?php echo $letter["l"];?></p>
-      </li>
-      <li class="letter" id="m">
-        <p>M: <?php echo $letter["m"];?></p>
-      </li>
-      <li class="letter" id="n">
-        <p>N: <?php echo $letter["n"];?></p>
-      </li>
-      <li class="letter" id="o">
-        <p>O: <?php echo $letter["o"];?></p>
-      </li>
-      <li class="letter" id="p">
-        <p>P: <?php echo $letter["p"];?></p>
-      </li>
-      <li class="letter" id="q">
-        <p>Q: <?php echo $letter["q"];?></p>
-      </li>
-      <li class="letter" id="r">
-        <p>R: <?php echo $letter["r"];?></p>
-      </li>
-      <li class="letter" id="s">
-        <p>S: <?php echo $letter["s"];?></p>
-      </li>
-      <li class="letter" id="t">
-        <p>T: <?php echo $letter["t"];?></p>
-      </li>
-      <li class="letter" id="u">
-        <p>U: <?php echo $letter["u"];?></p>
-      </li>
-      <li class="letter" id="v">
-        <p>V: <?php echo $letter["v"];?></p>
-      </li>
-      <li class="letter" id="w">
-        <p>W: <?php echo $letter["w"];?></p>
-      </li>
-      <li class="letter" id="x">
-        <p>X: <?php echo $letter["x"];?></p>
-      </li>
-      <li class="letter" id="y">
-        <p>Y: <?php echo $letter["y"];?></p>
-      </li>
-      <li class="letter" id="z">
-        <p>Z: <?php echo $letter["z"];?></p>
-      </li>
-    </ul>
+    <div class="jumbotron">
+      <h1>Letter & Word Counter</h1>
+      <p>And the results are..</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <p>The total number of letters is <?php echo $total_letters;?></p>
+        <ul class="list-group">
+          <!--For each to cycle out -->
+          <?php foreach ($letters as $key=>$letter) {?>
+            <?php
+                //ignore non used letters
+                if($letter == 0){
+                    continue;
+                  } else{?>
+            <li class="list-group-item" id="<?php echo $key;?>">
+              <span class="badge"><?php echo $letter;?></span>
+              <span class="badge">%<?php echo percentage($letter, $total_letters);?></span>
+              <?php echo ucfirst($key);?>
+            </li>
+            <?php } ?>
+          <?php } ?>
+        </ul>
+      </div>
+      <div class="col-sm-4">
+        <p>Total words: <?php echo $total_words;?></p>
+        <ul class="flex-container">
+          <!-- end for each word-->
+          <?php foreach ($words as $key=>$word) {?>
+            <li class="list-group-item" id="<?php echo $key;?>">
+              <span class="badge"><?php echo $word;?></span>
+              <span class="badge">%<?php echo percentage($word, $total_words);?></span>
+              <?php echo ucfirst($key);?>
+            </li>
+          <?php } ?>
+        </ul>
+      </div>
+    </div>
   </div>
 </body>
 </html>
