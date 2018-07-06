@@ -1,5 +1,17 @@
 <?php
-    //Make array to store letter counts.
+
+    //Get user string
+    $user_string = $_POST["letter_counter"];
+
+    //Turn user string into an array of lowercase letters
+    $user_array = str_split(strtolower($user_string));
+
+    function letterCounter($user_stuff) {
+       if (extension_loaded('newrelic')) { // Ensure PHP agent is available
+                newrelic_add_custom_tracer("sleep");
+        }
+
+        //Make array to store letter counts.
     $letters = array(
         "a" => 0,
         "b" => 0,
@@ -29,14 +41,8 @@
         "z" => 0,
       );
 
-    //Get user string
-    $user_string = $_POST["letter_counter"];
-
-    //Turn user string into an array of lowercase letters
-    $user_array = str_split(strtolower($user_string));
-
     //Check each letter of the user array to add to letter count
-    foreach ($user_array as $user_letter) {
+    foreach ($user_stuff as $user_letter) {
 
         switch ($user_letter) {
             case 'a':
@@ -119,8 +125,15 @@
                 break;
         }
     }
+    return $letters;
+  }
+
+    $letters = LetterCounter($user_array);
     //Make percentage calculator
     function percentage($letter, $devide_by){
+            if (extension_loaded('newrelic')) { // Ensure PHP agent is available
+                newrelic_add_custom_tracer("Percentage");
+        }
       $a = $letter / $devide_by;
       $send_back = $a * 100;
 
@@ -142,6 +155,14 @@
     //word count
     $total_words = array_sum($words);
 
+    //Sleeper
+    function sleeper_cell(){
+        if (extension_loaded('newrelic')) { // Ensure PHP agent is available
+                             newrelic_add_custom_tracer("sleep");
+        }
+        sleep(5);
+    }
+sleeper_cell();
 
 ?>
 
